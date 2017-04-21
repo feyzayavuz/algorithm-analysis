@@ -1,0 +1,38 @@
+from math import sqrt
+myArray = [1,2,3,4]
+
+min = myArray[0]
+max = myArray[0]
+average = 0
+#varyans hesaplama için
+n = 0
+toplam = 0
+toplam_kare = 0
+
+for i in range(0,len(myArray)):
+	if(myArray[i]<min):
+		min = myArray[i]
+		
+	if(myArray[i]>max):
+		max = myArray[i]
+		
+	average = average + myArray[i]
+
+for i in range(0,len(myArray)):
+  n = n + 1
+  toplam = toplam + myArray[i]
+  toplam_kare = toplam_kare + myArray[i]*myArray[i]
+  
+  ortalama = toplam/n
+
+
+varyans = (toplam_kare - toplam*ortalama)/(n - 1)
+standart_sapma = sqrt(varyans)
+average = average/len(myArray)
+
+print("min: "+ str(min))
+print("max: "+ str(max))
+print("average: "+ str(average))
+print("ortalama: "+str(ortalama))
+print("varyans: "+str(varyans))
+print("standart_sapma: "+ str(standart_sapma))
